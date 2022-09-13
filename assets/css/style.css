@@ -1,0 +1,226 @@
+:root {
+	--gradient1: #0262C3;
+	--gradient2: #0395C3;
+
+	--primaryBackground: #fff;
+
+	--titleForeground: #fff;
+	--primaryForeground: #000;
+	--secondaryForeground: #ccc;
+
+	--borderColor: #dadada;
+
+	--buttonBackground: #047AC4;
+	--buttonBackgroundHover: #6EA2D4;
+	--buttonForeground: #fff;
+}
+
+::placeholder {
+   color: var(--secondaryForeground);
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+	-webkit-appearance: none;
+	margin: 0;
+}
+input[type=number] {
+	-moz-appearance: textfield;
+}
+
+* {
+	box-sizing: border-box;
+	background-size: contain;
+	background-position: center;
+	background-repeat: no-repeat;
+	-webkit-mask-size: contain;
+	-webkit-mask-position: center;
+	-webkit-mask-repeat: no-repeat;
+	-moz-mask-size: contain;
+	-moz-mask-position: center;
+	-moz-mask-repeat: no-repeat;
+	mask-size: contain;
+	mask-position: center;
+	mask-repeat: no-repeat;
+	-webkit-user-select: none;
+	-moz-user-select: none;
+	user-select: none;
+	text-align: center;
+	color: var(--primaryForeground);
+	font-family: "Arial";
+	font-size: 20px;
+}
+
+html,body {
+	height: 100%;
+	width: 100%;
+	margin: 0;
+	padding: 0;
+}
+
+body {
+	background-image: linear-gradient(to top left, var(--gradient1), var(--gradient2));
+	min-width: 330px;
+	display: flex;
+	flex-direction: column;
+}
+
+.holder {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	padding: 20px;
+	flex-grow: 1;
+}
+
+input {
+	width: 100%;
+	padding: 10px;
+	border: none;
+	outline: none;
+	background: transparent;
+	border-bottom: 2px solid var(--borderColor);
+}
+input:focus {
+	border-bottom: 2px solid var(--buttonBackground);
+}
+
+input[type=checkbox] {
+	-webkit-appearance: none;
+	appearance: none;
+	margin: 3px 0 0 0;
+	font: inherit;
+	color: var(--borderColor);
+	width: 20px;
+	height: 20px;
+	border: 2px solid var(--borderColor);
+	border-radius: 0.15em;
+	transform: translateY(-0.075em);
+	display: grid;
+	place-content: center;
+}
+input[type=checkbox]::before {
+	content: "";
+	width: 0.65em;
+	height: 0.65em;
+	transform: scale(0);
+	transition: 120ms transform ease-in-out;
+	box-shadow: inset 1em 1em var(--buttonBackground);
+	transform-origin: bottom left;
+	clip-path: polygon(14% 44%, 0 65%, 50% 100%, 100% 16%, 80% 0%, 43% 62%);
+}
+input[type=checkbox]:hover, input[type=checkbox]:checked {
+	border: 2px solid var(--buttonBackground);
+}
+input[type=checkbox]:checked::before {
+	transform: scale(1);
+}
+
+input[type=checkbox]::before {
+	background-color: CanvasText;
+}
+
+.main {
+	width: 100%;
+	max-width: 500px;
+	background-color: var(--primaryBackground);
+	display: flex;
+	flex-direction: column;
+	border-radius: 20px;
+	-webkit-box-shadow: 0 10px 10px 0 rgba(0,0,0,0.2), 0 0px 20px 0 rgba(0,0,0,0.22);
+	-moz-box-shadow: 0 10px 10px 0 rgba(0,0,0,0.2), 0 0px 20px 0 rgba(0,0,0,0.22);
+	box-shadow: 0 10px 10px 0 rgba(0,0,0,0.2), 0 0px 20px 0 rgba(0,0,0,0.22);
+}
+.title {
+	font-weight: bold;
+	font-size: 50px;
+	color: var(--titleForeground);
+	opacity: 0.9;
+}
+.subtitle, .footer {
+	color: var(--titleForeground);
+	opacity: 0.7;
+	padding: 0 20px;
+}
+.subtitle {
+	margin-bottom: 10px;
+}
+.footer {
+	margin-bottom: 5px;
+}
+
+form {
+	padding: 20px;
+}
+form .field {
+	margin-bottom: 10px;
+	display: flex;
+	justify-content: center;
+}
+form .result {
+	margin-bottom: 10px;
+	display: flex;
+	justify-content: space-between;
+}
+form .name {
+	margin-right: 10px;
+}
+.button {
+	background: var(--buttonBackground);
+	color: var(--buttonForeground);
+	border-radius: 10px;
+	outline: none;
+	border: none;
+	padding: 10px;
+}
+.button:not(.disabled):hover {
+	background: var(--buttonBackgroundHover);
+	cursor: pointer;
+}
+
+.link {
+	color: var(--buttonBackground);
+}
+.link:not(.disabled):hover {
+	color: var(--buttonBackgroundHover);
+	cursor: pointer;
+}
+
+.disabled {
+	cursor: not-allowed;
+	filter: saturate(0%) brightness(150%);
+}
+
+.shown:not(.flex) {
+	display: block !important;
+}
+.flex.shown {
+	display: flex !important;
+}
+
+#results {
+	display: none;
+}
+
+#cert .field, #results .result {
+	height: 39px;
+	align-items: center;
+}
+
+#results .result .name {
+	overflow: hidden;
+	text-overflow: ellipsis;
+}
+
+@media (max-width: 500px) {
+	.holder {
+		display: block;
+		padding: 20px 0;
+	}
+	.main {
+		min-width: initial;
+		box-shadow: none;
+		border-radius: 0;
+	}
+}
