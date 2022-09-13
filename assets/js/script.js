@@ -291,12 +291,12 @@ async function generateTSLA(buffer) {
 function download(filename, text) {
 	var element = $("<a/>");
 	element.attr("href", 'data:text/plain;charset=utf-8,' + encodeURIComponent(text));
-    element.attr("download", filename);
-    element.addClass("download");
-    element.css("display", "none");
-    $("body").append(element);
-    element[0].click();
-    element.remove();
+	element.attr("download", filename);
+	element.addClass("download");
+	element.css("display", "none");
+	$("body").append(element);
+	element[0].click();
+	element.remove();
 }
 
 function clipboard(link, text) {
