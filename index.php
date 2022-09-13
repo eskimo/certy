@@ -1,5 +1,5 @@
 <?php
-	$revision = "20220912v2";
+	$revision = "20220912v3";
 ?>
 <!DOCTYPE html>
 <html>
@@ -50,6 +50,6 @@
 			</div>
 		</div>
 	</div>
-	<div class="footer">&copy; <?php echo date("Y"); ?> Eskimo Software</div>
+	<div class="footer">&copy; <?php echo date("Y"); ?>&nbsp;<a href="https://eskimosoftware" target="_blank">Eskimo Software</a></div>
 </body>
 </html>

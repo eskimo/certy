@@ -150,6 +150,15 @@ input[type=checkbox]::before {
 	margin-bottom: 5px;
 }
 
+a {
+	color: var(--titleForeground) !important;
+	text-decoration: none;
+}
+a:hover {
+	text-decoration: underline;
+	opacity: 0.5;
+}
+
 form {
 	padding: 20px;
 }
