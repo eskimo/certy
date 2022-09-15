@@ -1,5 +1,5 @@
 <?php
-	$revision = "20220912v3";
+	$revision = "20220915v1";
 ?>
 <!DOCTYPE html>
 <html>
@@ -22,7 +22,7 @@
 						<input type="text" name="domain" placeholder="Domain Name">
 					</div>
 					<div class="field">
-						<input type="number" name="days" placeholder="Days To Expire" min="1" max="365">
+						<input type="number" name="days" placeholder="Days To Expire" min="1" max="3650">
 					</div>
 					<div class="field">
 						<div class="name">Wildcard:</div>

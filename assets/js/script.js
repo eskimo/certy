@@ -33,8 +33,8 @@ function createCert(domain, wildcard, days) {
 	if (days < 1) {
 		return Promise.reject("Please enter how many days this certificate should be valid for.");
 	}
-	if (days > 365) {
-		return Promise.reject("Please enter an amount of days that's not more than 365.");
+	if (days > 3650) {
+		return Promise.reject("Please enter an amount of days that's not more than 3650.");
 	}
 
 	const certificate = new Certificate();
