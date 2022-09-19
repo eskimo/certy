@@ -81,6 +81,9 @@ input {
 	outline: none;
 	background: transparent;
 	border-bottom: 2px solid var(--borderColor);
+	-webkit-user-select: auto;
+	-moz-user-select: auto;
+	user-select: auto;
 }
 input:focus {
 	border-bottom: 2px solid var(--buttonBackground);
