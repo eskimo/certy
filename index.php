@@ -8,7 +8,7 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<title>Certy</title>
 	<link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
-	<link rel="stylesheet" type="text/css" href="/assets/css/beta?r=<?php echo $revision; ?>">
+	<link rel="stylesheet" type="text/css" href="/assets/css/style?r=<?php echo $revision; ?>">
 	<script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
 	<script type="module" src="/assets/js/script?r=<?php echo $revision; ?>"></script>
 </head>
