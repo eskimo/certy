@@ -1,5 +1,5 @@
 <?php
-	$revision = "20221206v1";
+	$revision = "20221105v3";
 ?>
 <!DOCTYPE html>
 <html>
@@ -10,7 +10,7 @@
 	<link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
 	<link rel="stylesheet" type="text/css" href="/assets/css/beta?r=<?php echo $revision; ?>">
 	<script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
-	<script type="module" src="/assets/js/script?r=<?php echo $revision; ?>"></script>
+	<script type="module" src="/assets/js/beta?r=<?php echo $revision; ?>"></script>
 </head>
 <body>
 	<div class="holder">

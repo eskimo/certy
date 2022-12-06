@@ -309,11 +309,12 @@ function download(filename, text) {
 }
 
 function clipboard(link, text) {
+	let title = link.text();
 	navigator.clipboard.writeText(text);
 
 	link.text("Copied!");
 	setTimeout(() => {
-		link.text("Clipboard");
+		link.text(title);
 	}, 1000);
 }
 
