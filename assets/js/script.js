@@ -111,7 +111,7 @@ function createCert(domain, alternateNames, wildcard, days) {
 
 	if (wildcard) {
 		$.each(sans, (k, name) => {
-			sans.push("*."+name);
+			sans.push(`*.${name}`);
 		});
 	}
 
@@ -217,15 +217,15 @@ function formatCert(type, data) {
 			break;
 	}
 
-	let header = "-----BEGIN "+name+"-----\r\n";
-	let body = splitString(64, data)+"\r\n";
-	let footer = "-----END "+name+"-----\r\n";
+	let header = `-----BEGIN ${name}-----\r\n`;
+	let body = `${splitString(64, data)}\r\n`;
+	let footer = `-----END ${name}-----\r\n`;
 
 	return header+body+footer;
 }
 
 function setData(el, key, data) {
-	el.data(key, data).attr("data-"+key, data);
+	el.data(key, data).attr(`data-${key}`, data);
 }
 
 function afterSubmit(e, response) {
@@ -275,22 +275,13 @@ async function api(data) {
 	return await output;
 }
 
-function generateTLSA(cert) {
-	let data = {
-		action: "getTLSA",
-		cert: cert
-	};
-
-	return api(data);
-}
-
-async function generateTSLA(buffer) {
+async function generateTLSA(buffer) {
 	let output = new Promise(function(resolve) {
 		const crypto = getCrypto();
 		crypto.digest(hashAlg, buffer).then((result) => {
 			const array = Array.from(new Uint8Array(result));
 			const hex = array.map((b) => b.toString(16).padStart(2, '0')).join('').toUpperCase();
-			resolve("3 1 1 "+hex);
+			resolve(`3 1 1 ${hex}`);
 		});
 	});
 
@@ -362,7 +353,7 @@ $(() => {
 					let keyData = btoa(privateKeyString);
 					let key = formatCert("key", keyData);
 
-					generateTSLA(pubkeyBuffer).then((tlsa) => {
+					generateTLSA(pubkeyBuffer).then((tlsa) => {
 						let response = {
 							success: true,
 							data: {
