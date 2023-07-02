@@ -5,6 +5,7 @@
 <html>
 <head>
 	<meta charset="utf-8">
+	<meta name="darkreader" content="noplz">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<title>Certy</title>
 	<link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
@@ -63,5 +64,20 @@
 		</div>
 	</div>
 	<div class="footer">&copy; <?php echo date("Y"); ?>&nbsp;<a href="https://eskimosoftware" target="_blank">Eskimo Software</a></div>
+	<script>
+	  var _paq = window._paq = window._paq || [];
+	  _paq.push(["setCookieDomain", "*.certy.ca"]);
+	  _paq.push(["setDomains", ["*.certy.ca","*.certy"]]);
+	  _paq.push(['trackPageView']);
+	  _paq.push(['enableLinkTracking']);
+	  (function() {
+	    var u="https://35k1m0.com/trkr/";
+	    _paq.push(['setTrackerUrl', u+'matomo.php']);
+	    _paq.push(['setSiteId', '15']);
+	    var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
+	    g.async=true; g.src=u+'matomo.js'; s.parentNode.insertBefore(g,s);
+	  })();
+	</script>
+	<noscript><p><img src="https://35k1m0.com/trkr/matomo.php?idsite=15&amp;rec=1" style="border:0;" alt="" /></p></noscript>
 </body>
 </html>
